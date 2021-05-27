@@ -17,8 +17,8 @@ from rest_framework import status
 def MetDirecciones(request):
 
     if request.method == 'GET':
-        dir=Direcciones.objects.all()
-        serializer=DireccionesSerializer(dir,many=True)
+        direc = Direcciones.objects.all()
+        serializer=DireccionesSerializer(direc,many=True)
         return JsonResponse(serializer.data,safe=False)
 
 #Guardar direcciones
@@ -29,7 +29,7 @@ def MetDirecciones(request):
             return JsonResponse(serializer.data,status=status.HTTP_201_CREATED)
         return JsonResponse(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
 
-#buscar, actualizar, eliminar cursos, se hace por el id del curso
+#buscar, actualizar, eliminar direcciones, se hace por el id de la dirección
 @api_view(['GET', 'PUT', 'DELETE'])
 def direcciones_detail(request,key):
     try:

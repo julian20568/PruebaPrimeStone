@@ -21,5 +21,11 @@ urlpatterns=[
     path('direcciones/pais/<str:ps>',views_direcciones.Dir_pais),
     path('direcciones/ciudad/<str:ciu>',views_direcciones.Dir_ciudad),
     path('direcciones/barrio/<str:bar>',views_direcciones.Dir_barrio),
+
+    #################################
+    #RUTAS PARA LA CLASE ESTUDIANTES#
+    #################################
+    path('estudiantes',views_estudiantes.MetEstudiantes),
+    path('estudiantes/<int:key>',views_estudiantes.estudiante_detail),
 ]
 
