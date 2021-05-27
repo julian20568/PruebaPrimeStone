@@ -6,6 +6,8 @@ class Cursos(models.Model):
     nombre = models.CharField(max_length=100, blank=False, null=False)
     duracion = models.CharField(max_length=100, blank=False, null=False)
     costo = models.IntegerField(blank=False, null=False)
+    fecha_inicio = models.DateTimeField(blank=False, null=False)
+    fecha_fin = models.DateTimeField(blank=False, null=False)
 
 class Direcciones(models.Model):
     id = models.AutoField(primary_key=True)
@@ -21,6 +23,8 @@ class Estudiantes(models.Model):
     num_documento = models.BigIntegerField()
     num_telefono = models.BigIntegerField()
     correo = models.EmailField()
+    genero = models.CharField(max_length=12, blank=False, null=False)
+    fecha_nacimiento = models.DateTimeField(blank=False, null=False)
     id_curso = models.ForeignKey(Cursos, on_delete=models.CASCADE, null=False)
     id_direcciones = models.ForeignKey(Direcciones, on_delete=models.CASCADE, null=False)
 

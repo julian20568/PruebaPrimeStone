@@ -39,16 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'CrudEstudiantes',
     'rest_framework',
-    'rest_framework.authtoken'​,
+    'rest_framework.authtoken',
 ]
 
 REST_FRAMEWORK={
-'DEFAULT_AUTHENTICATION_CLASSES'​ :[
+'DEFAULT_AUTHENTICATION_CLASSES' :[
+'rest_framework.authentication.TokenAuthentication' ,
 ],
-'rest_framework.authentication.TokenAuthentication'​ ,
-'DEFAULT_PERMISSION_CLASSES'​ : [
+'DEFAULT_PERMISSION_CLASSES' : [
+'rest_framework.permissions.IsAuthenticated' ,
 ]
-'rest_framework.permissions.IsAuthenticated'​ ,
 }
 
 MIDDLEWARE = [
