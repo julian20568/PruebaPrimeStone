@@ -11,7 +11,7 @@ class CursosSerializer(serializers.ModelSerializer):
 class DireccionesSerializer(serializers.ModelSerializer):
     class Meta:
         model=Direcciones
-        fields=['id','direccion']
+        fields=['id','pais','ciudad','barrio','direccion']
 
 class EstudiantesSerializer(serializers.ModelSerializer):
     class Meta:

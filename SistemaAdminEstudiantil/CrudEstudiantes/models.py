@@ -9,6 +9,9 @@ class Cursos(models.Model):
 
 class Direcciones(models.Model):
     id = models.AutoField(primary_key=True)
+    pais = models.CharField(max_length=100, blank=False, null=False)
+    ciudad = models.CharField(max_length=100, blank=False, null=False)
+    barrio = models.CharField(max_length=100, blank=False, null=False)
     direccion = models.CharField(max_length=100, blank=False, null=False)
 
 class Estudiantes(models.Model):
