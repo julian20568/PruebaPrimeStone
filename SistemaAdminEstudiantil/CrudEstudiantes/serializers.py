@@ -6,14 +6,14 @@ from CrudEstudiantes.models import Estudiantes
 class CursosSerializer(serializers.ModelSerializer):
     class Meta:
         model=Cursos
-        fields=['id','nombre','duracion','costo']
+        fields=['cod','nombre','duracion','costo','fecha_inicio','fecha_fin']
 
 class DireccionesSerializer(serializers.ModelSerializer):
     class Meta:
         model=Direcciones
-        fields=['id','pais','ciudad','barrio','direccion']
+        fields=['cod','pais','ciudad','barrio','direccion']
 
 class EstudiantesSerializer(serializers.ModelSerializer):
     class Meta:
         model=Estudiantes
-        fields=['id','nombre','apellido','num_documento','num_telefono','correo','id_curso','id_direcciones']
+        fields=['cod','nombre','apellido','num_documento','num_telefono','correo','genero','fecha_nacimiento','cod_curso','cod_direcciones']
