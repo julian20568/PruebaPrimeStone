@@ -2,7 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+import platform, logging
 
 def main():
     """Run administrative tasks."""
@@ -16,6 +16,23 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
     execute_from_command_line(sys.argv)
+
+#logs a base de archivos de texto
+if platform.platform().startswith('Windows'):
+    fichero_log = os.path.join(os.getenv('HOMEDRIVE'), 
+                               os.getenv("HOMEPATH"),
+                               'test.log')
+else:
+    fichero_log = os.path.join(os.getenv('HOME'), 'test.log')
+
+print('Archivo Log en ', fichero_log)
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s : %(levelname)s : %(message)s',
+                    filename = fichero_log,
+                    filemode = 'w',)
+logging.debug('Comienza el programa\n')
+logging.info('Procesando con normalidad\n')
+logging.warning('Advertencia')
 
 
 if __name__ == '__main__':
