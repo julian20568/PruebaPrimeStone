@@ -12,8 +12,8 @@ consultas de los metodos creados en las vistas.
 
 Datos de prueba
 
-User: prueba
-Pass: 123
+User: prueba <-->
+Pass: 123 <-->
 Tocken: 643dd9a829640eaf49892e5016a37db9e3e8d639
 
 Agregar Cursos
